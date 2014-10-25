@@ -1,0 +1,26 @@
+{
+  "name": "beta.basketoudon",
+  "version": "0.0.1",
+  "authors": [
+    "tperroin <thibault.perroin@gmail.com>"
+  ],
+  "description": "Site officiel club basketoudon",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "basket",
+    "oudon",
+    "basketoudon",
+    "basketball",
+    "basket-ball"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

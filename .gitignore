@@ -1,0 +1,11 @@
+/app/server/web/bundles/
+/app/server/app/bootstrap*
+/app/server/app/cache/*
+/app/server/app/logs/*
+/app/server/vendor/
+/app/server/app/config/parameters.yml
+node_modules/*
+/app/vendor/*
+/app/web/css/*
+/app/web/js/*
+/.idea/*
