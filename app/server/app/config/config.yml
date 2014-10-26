@@ -72,3 +72,7 @@ swiftmailer:
     spool:     { type: memory }
 
 nelmio_api_doc: ~
+
+fos_rest:
+    routing_loader:
+        default_format: json
