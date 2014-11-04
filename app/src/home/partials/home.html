@@ -1,0 +1,156 @@
+<div class="ui two stackable column grid">
+    <div class="collapsing no-border news ten wide column">
+
+        <div class="ui segment">
+            <div class="news image">
+                <img src="web/img/basket.jpg"/>
+            </div>
+            <div class="news infos">Auteur et date de publication</div>
+            <div class="news content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda facere illum modi neque porro quasi
+                sequi tenetur, voluptatem! Atque autem iure ullam. Ab dignissimos itaque magni reiciendis repellat sed
+                vitae.
+            </div>
+            <div class="news next">
+                <i class="down arrow orange tiny icon"></i>
+            </div>
+        </div>
+    </div>
+    <div class="collapsing no-border six wide column widget">
+        <div class="ui segment fx-easing-bounce" ng-if="!connectedUser.connected">
+            <form ng-submit="login(credentials)">
+                <div class="ui form segment">
+                    <div class="field" ng-class="{error: errorMessage}">
+                        <div class="ui left labeled icon input">
+                            <input type="text" placeholder="Nom d'utilisateur" name="username"
+                                   ng-model="credentials.username">
+                            <i class="user icon"></i>
+
+                            <div class="ui corner label">
+                                <i class="icon asterisk"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field" ng-class="{error: errorMessage}">
+                        <div class="ui left labeled icon input">
+                            <input type="password" name="password" ng-model="credentials.password">
+                            <i class="lock icon"></i>
+
+                            <div class="ui corner label">
+                                <i class="icon asterisk"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui error message">
+                        <div class="header">We noticed some issues</div>
+                    </div>
+                    <input type="submit" class="ui blue submit small button" value="Se connecter"/>
+                </div>
+            </form>
+        </div>
+        <div class="ui segment fx-fade-down fx-easing-bounce" ng-if="connectedUser.connected">
+            <h2 class="ui dividing header">
+                Bonjour, {{connectedUser.username}}
+                <div class="sub header">Ton espace dédié</div>
+            </h2>
+            <div class="ui red button" ng-click="logout(connectedUser)">Logout</div>
+        </div>
+        <div class="ui segment fx-fade-down fx-easing-bounce" ng-if="connectedUser.connected">
+            <h2 class="ui dividing header">
+                Mon planning
+                <div class="sub header">Mon planning du 25/10/2014</div>
+            </h2>
+            Je suis :
+            <a class="ui green label">
+                de table
+            </a>
+            <a class="ui red label">
+                d'arbitrage
+            </a>
+            <a class="ui blue label">
+                de bar
+            </a>
+            <a class="ui orange label">
+                de transport
+            </a>
+            <a class="ui purple label">
+                responsable de salle
+            </a>
+            <table class="ui table segment">
+                <thead>
+                <tr>
+                    <th>Lieu</th>
+                    <th>Club adverse</th>
+                    <th>Convoc</th>
+                    <th>Match</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Oudon</td>
+                    <td>Us Jeanne d'Arc carquefou</td>
+                    <td>12h30</td>
+                    <td>13h00</td>
+                </tr>
+
+                </tbody>
+            </table>
+            <table class="ui table segment">
+                <thead>
+                <tr>
+                    <th>Lieu</th>
+                    <th>Club adverse</th>
+                    <th>Depart</th>
+                    <th>Match</th>
+                    <th>Jour</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>John</td>
+                    <td>Approved</td>
+                    <td>None</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+
+        </div>
+        <div class="ui segment fx-fade-down fx-easing-bounce" ng-if="connectedUser.connected">
+            <h2 class="ui dividing header">
+                Résultats des matchs
+                <div class="sub header">Résultats du 25/10/2014</div>
+            </h2>
+            <div class="ui grid">
+                <div class="row">
+                    <a class="ui blue label">
+                        Seniors DM1
+                    </a>
+                </div>
+                <div class="row match">
+                    <div class="six wide column">
+                        <div class="ui segment">
+                            <p>Asso Basket Oudon</p>
+                        </div>
+                    </div>
+                    <div class="four wide column">
+                        <div class="ui segment">
+                            <p>55 - 50</p>
+                        </div>
+                    </div>
+                    <div class="six wide column">
+                        <div class="ui segment">
+                            <p>US JEANNE D'ARC CARQUEFOU</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+

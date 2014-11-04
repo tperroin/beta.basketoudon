@@ -9,3 +9,5 @@ node_modules/*
 /app/web/css/*
 /app/web/js/*
 /.idea/*
+
+app/server/app/var

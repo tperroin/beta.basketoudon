@@ -7,3 +7,26 @@ NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
 
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+news:
+    type: rest
+    resource: Tperroin\BasketBundle\Controller\NewsRestController
+    prefix: api/fully/v1.0/news/
+    options:
+        expose: true
+
+users:
+    type: rest
+    resource: Tperroin\BasketBundle\Controller\AuthorizationController
+    prefix: api/fully/v1.0/users/
+    options:
+        expose: true
+
+api_login_check:
+   path: /api/login_check
+

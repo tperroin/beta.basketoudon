@@ -56,6 +56,13 @@ class News
      */
     private $isActive;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255)
+     */
+    private $image;
+
 
     /**
      * Get id
@@ -180,5 +187,28 @@ class News
     public function getIsActive()
     {
         return $this->isActive;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return News
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

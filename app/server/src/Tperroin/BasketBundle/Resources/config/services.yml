@@ -1,0 +1,8 @@
+services:
+  wsse.security.authentication.provider:
+      class:  Tperroin\BasketBundle\Security\Authorization\Provider\WsseProvider
+      arguments: ['', %kernel.cache_dir%/security/nonces]
+
+  wsse.security.authentication.listener:
+      class:  Tperroin\BasketBundle\Security\Firewall\WsseListener
+      arguments: [@security.context, @security.authentication.manager]

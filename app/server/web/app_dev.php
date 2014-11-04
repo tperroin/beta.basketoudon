@@ -22,8 +22,15 @@ Debug::enable();
 
 require_once __DIR__.'/../app/AppKernel.php';
 
+
+
 $kernel = new AppKernel('dev', true);
 $kernel->loadClassCache();
+
+$jsroute = $kernel->handle(Request::create('/js/routing?callback=fos.Router.setData'));
+
+file_put_contents(__DIR__.'/js/routes.js', $jsroute->getContent());
+
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();

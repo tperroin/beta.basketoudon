@@ -9,10 +9,17 @@ module.exports = function (grunt) {
                     separator: ';'
                 },
                 src: [
+                    'app/server/web/bundles/fosjsrouting/js/router.js',
+                    'app/server/web/js/fos_js_routes.js',
                     'app/vendor/angular/angular.min.js',
                     'app/vendor/jquery/dist/jquery.min.js',
                     'app/vendor/semantic-ui/build/packaged/javascript/semantic.min.js',
                     'app/vendor/imgLiquid/js/imgLiquid-min.js',
+                    'app/vendor/lodash/dist/lodash.min.js',
+                    'app/vendor/restangular/dist/restangular.min.js',
+                    'app/vendor/angular-ui-router/release/angular-ui-router.min.js',
+                    'app/vendor/angular-http-auth/src/http-auth-interceptor.js',
+                    'app/vendor/ngFx/dist/ngFx.min.js',
                     'app/src/**/*.js',
                     'app/src/js/**/*.js'
 
