@@ -16,7 +16,7 @@ fos_user:
 news:
     type: rest
     resource: Tperroin\BasketBundle\Controller\NewsRestController
-    prefix: api/fully/v1.0/news/
+    prefix: api/trully/v1.0/news/
     options:
         expose: true
 

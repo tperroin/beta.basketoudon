@@ -7,61 +7,64 @@
     <script src="web/js/main.min.js"></script>
 </head>
 <body ng-app="app">
-<div class="ui thin vertical inverted icon sidebar menu center-container" id="left-menu-full">
-    <a ui-sref="home" class="item logo">
-        <i class="icon logo top"></i>
-    </a>
+<div ng-controller="homeController">
+    <div class="ui thin vertical inverted icon sidebar menu center-container" id="left-menu-full">
+        <a ui-sref="home" class="item logo">
+            <i class="icon logo top"></i>
+        </a>
 
-    <div class="absolute-center">
-        <a class="item" ui-sref="news">
-            <i class="browser icon"></i> Actualités
-        </a>
-        <a class="item" ui-sref="schedule">
-            <i class="time icon"></i> Horaires
-        </a>
-        <a class="item" ui-sref="events">
-            <i class="calendar icon"></i> Evènements
-        </a>
-        <a class="item" ui-sref="forums">
-            <i class="chat outline icon"></i> Forums
-        </a>
-        <a class="item" ui-sref="admin">
-            <i class="settings icon"></i> Administration
+        <div class="absolute-center">
+            <a class="item" ui-sref="news">
+                <i class="browser icon"></i> Actualités
+            </a>
+            <a class="item" ui-sref="schedule">
+                <i class="time icon"></i> Horaires
+            </a>
+            <a class="item" ui-sref="events">
+                <i class="calendar icon"></i> Evénements
+            </a>
+            <a class="item" ui-sref="forums">
+                <i class="chat outline icon"></i> Forums
+            </a>
+            <a class="item" ui-sref="admin" ng-if="user.isAdmin()">
+                <i class="settings icon"></i> Administration
+            </a>
+        </div>
+
+    </div>
+    <div class="ui very thin vertical inverted icon sidebar menu center-container" id="left-menu-partial">
+
+        <div class="absolute-center">
+            <a class="item" ui-sref="news">
+                <i class="browser icon"></i>
+            </a>
+            <a class="item" ui-sref="schedule">
+                <i class="time icon"></i>
+            </a>
+            <a class="item" ui-sref="events">
+                <i class="calendar icon"></i>
+            </a>
+            <a class="item" ui-sref="forums">
+                <i class="chat outline icon"></i>
+            </a>
+            <a class="item" ui-sref="admin">
+                <i class="settings icon"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="ui fixed in menu" id="top-menu">
+
+        <a class="green item" ui-sref="home">
+            <i class="home icon"></i> Accueil
         </a>
     </div>
 
-</div>
-<div class="ui very thin vertical inverted icon sidebar menu center-container" id="left-menu-partial">
+    <div ui-view class="main container fx-bounce-left">
 
-    <div class="absolute-center">
-        <a class="item" ui-sref="news">
-            <i class="browser icon"></i>
-        </a>
-        <a class="item" ui-sref="schedule">
-            <i class="time icon"></i>
-        </a>
-        <a class="item" ui-sref="events">
-            <i class="calendar icon"></i>
-        </a>
-        <a class="item" ui-sref="forums">
-            <i class="chat outline icon"></i>
-        </a>
-        <a class="item" ui-sref="admin">
-            <i class="settings icon"></i>
-        </a>
     </div>
-
 </div>
 
-<div class="ui fixed in menu" id="top-menu">
-
-    <a class="green item" ui-sref="home">
-        <i class="home icon"></i> Accueil
-    </a>
-</div>
-
-<div ui-view class="main container fx-bounce-left">
-
-</div>
 </body>
 </html>

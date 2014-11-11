@@ -9,10 +9,12 @@ angular
 
 angular
     .module('app')
-    .config(function (RestangularProvider, $stateProvider, $urlRouterProvider) {
+    .config(function (RestangularProvider, $stateProvider, $urlRouterProvider, $httpProvider) {
 
         RestangularProvider.setBaseUrl('http://beta.basketoudon.local/server/web/app_dev.php'); //wOOt, ugly ...but that's a demo ;)
         RestangularProvider.setRequestSuffix('.json');
+
+        $httpProvider.interceptors.push('AuthenticationInterceptor');
 
         $urlRouterProvider.otherwise("/home");
         $stateProvider

@@ -1,15 +1,14 @@
 <div class="ui two stackable column grid">
     <div class="collapsing no-border news ten wide column">
 
-        <div class="ui segment">
+        <div class="ui segment" ng-repeat="news in newsList">
             <div class="news image">
-                <img src="web/img/basket.jpg"/>
+                <img src="{{news.image}}"/>
             </div>
-            <div class="news infos">Auteur et date de publication</div>
+            <div class="news infos">Ajouté par : {{news.created_by}} - {{news.created_at | date: 'dd/MMM/yyyy'}}</div>
             <div class="news content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda facere illum modi neque porro quasi
-                sequi tenetur, voluptatem! Atque autem iure ullam. Ab dignissimos itaque magni reiciendis repellat sed
-                vitae.
+                <h3>{{news.title}}</h3>
+                {{news.content}}
             </div>
             <div class="news next">
                 <i class="down arrow orange tiny icon"></i>
@@ -17,7 +16,7 @@
         </div>
     </div>
     <div class="collapsing no-border six wide column widget">
-        <div class="ui segment fx-easing-bounce" ng-if="!connectedUser.connected">
+        <div class="ui segment fx-easing-bounce" ng-if="!user.isConnected()">
             <form ng-submit="login(credentials)">
                 <div class="ui form segment">
                     <div class="field" ng-class="{error: errorMessage}">
@@ -48,14 +47,14 @@
                 </div>
             </form>
         </div>
-        <div class="ui segment fx-fade-down fx-easing-bounce" ng-if="connectedUser.connected">
+        <div class="ui segment fx-fade-down fx-easing-bounce" ng-if="user.isConnected()">
             <h2 class="ui dividing header">
                 Bonjour, {{connectedUser.username}}
                 <div class="sub header">Ton espace dédié</div>
             </h2>
             <div class="ui red button" ng-click="logout(connectedUser)">Logout</div>
         </div>
-        <div class="ui segment fx-fade-down fx-easing-bounce" ng-if="connectedUser.connected">
+        <div class="ui segment fx-fade-down fx-easing-bounce" ng-if="user.isConnected()">
             <h2 class="ui dividing header">
                 Mon planning
                 <div class="sub header">Mon planning du 25/10/2014</div>
@@ -117,7 +116,7 @@
 
 
         </div>
-        <div class="ui segment fx-fade-down fx-easing-bounce" ng-if="connectedUser.connected">
+        <div class="ui segment fx-fade-down fx-easing-bounce" ng-if="user.isConnected()">
             <h2 class="ui dividing header">
                 Résultats des matchs
                 <div class="sub header">Résultats du 25/10/2014</div>
