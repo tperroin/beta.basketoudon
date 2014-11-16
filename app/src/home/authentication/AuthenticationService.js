@@ -36,6 +36,7 @@ angular.module('app').
                 delete $http.defaults.headers.common.Authorization;
                 delete $window.sessionStorage.user;
                 delete $window.sessionStorage.token;
+                delete $rootScope.connectedUser;
                 $rootScope.$broadcast('event:auth-logout-complete');
             }
         };

@@ -7,11 +7,14 @@ angular
             password: 'password'
         };
 
-        $scope.user = $rootScope.connectedUser;
+        if ($rootScope.connectedUser) {
+            $scope.user = $rootScope.connectedUser;
+        }
+
 
         var api = ApiService;
 
-        var news = Restangular.all(api.getRoute('get_news'));
+        var news = Restangular.all(api.getRoute('get_active_news'));
 
         news.getList().then(function (result) {
             $scope.newsList = Restangular.stripRestangular(result);

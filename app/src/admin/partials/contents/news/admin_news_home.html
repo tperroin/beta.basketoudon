@@ -1,0 +1,28 @@
+<div class="ui blue segment">
+    <h2 class="ui header">
+        Gestion des articles
+    </h2>
+
+    <div class="ui section divider"></div>
+    <table class="ui table segment">
+        <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Contenu résumé</th>
+            <th>Ajouté le</th>
+            <th>Créé par</th>
+            <th>Publié</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="news in newsList">
+            <td>{{news.title}}</td>
+            <td>{{news.content | limitTo: 150}}</td>
+            <td>{{news.created_at | date: 'dd/MMM/yyyy'}}</td>
+            <td>{{news.created_by}}</td>
+            <td>{{news.is_active}}</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>

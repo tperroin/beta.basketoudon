@@ -32,7 +32,7 @@ function UserService($rootScope) {
         return roles;
     };
 
-    function  isAdmin() {
+    function isAdmin() {
         var retour = -1;
         if($rootScope.connectedUser) {
             retour = $rootScope.connectedUser.roles.indexOf('ROLE_SUPER_ADMIN');

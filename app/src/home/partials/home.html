@@ -8,7 +8,7 @@
             <div class="news infos">Ajouté par : {{news.created_by}} - {{news.created_at | date: 'dd/MMM/yyyy'}}</div>
             <div class="news content">
                 <h3>{{news.title}}</h3>
-                {{news.content}}
+                {{news.content | limitTo: 225}}...
             </div>
             <div class="news next">
                 <i class="down arrow orange tiny icon"></i>
@@ -52,7 +52,6 @@
                 Bonjour, {{connectedUser.username}}
                 <div class="sub header">Ton espace dédié</div>
             </h2>
-            <div class="ui red button" ng-click="logout(connectedUser)">Logout</div>
         </div>
         <div class="ui segment fx-fade-down fx-easing-bounce" ng-if="user.isConnected()">
             <h2 class="ui dividing header">

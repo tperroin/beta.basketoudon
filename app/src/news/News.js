@@ -5,7 +5,7 @@ function NewsModel() {
     this.created_at = '';
     this.created_by = '';
     this.image = '';
-    this.isActive = true;
+    this.isActive = '';
 }
 
 angular

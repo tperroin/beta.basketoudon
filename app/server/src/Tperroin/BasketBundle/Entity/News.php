@@ -63,7 +63,6 @@ class News
      */
     private $image;
 
-
     /**
      * Get id
      *

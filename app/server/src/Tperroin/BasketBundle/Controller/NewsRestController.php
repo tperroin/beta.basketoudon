@@ -49,6 +49,24 @@ class NewsRestController extends Controller
     /**
      * @ApiDoc()
      */
+    public function getActiveNewsAction()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $news = $em->getRepository('TperroinBasketBundle:News')->findByIsActive(true);
+
+        $view = View::create()
+            ->setStatusCode(200)
+            ->setData($news);
+
+        return $this->get('fos_rest.view_handler')->handle($view);
+
+    } // "get_active_news"     [GET] /news
+
+    /**
+     * @ApiDoc()
+     */
     public function postNewsAction(Request $request)
     {
 

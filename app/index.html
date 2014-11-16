@@ -26,9 +26,6 @@
             <a class="item" ui-sref="forums">
                 <i class="chat outline icon"></i> Forums
             </a>
-            <a class="item" ui-sref="admin" ng-if="user.isAdmin()">
-                <i class="settings icon"></i> Administration
-            </a>
         </div>
 
     </div>
@@ -47,9 +44,6 @@
             <a class="item" ui-sref="forums">
                 <i class="chat outline icon"></i>
             </a>
-            <a class="item" ui-sref="admin">
-                <i class="settings icon"></i>
-            </a>
         </div>
 
     </div>
@@ -59,6 +53,15 @@
         <a class="green item" ui-sref="home">
             <i class="home icon"></i> Accueil
         </a>
+
+        <div class="right menu" ng-if="connectedUser">
+            <a class="item" ng-if="connectedUser.isAdmin()" ui-sref="admin">
+                <i class="settings icon"></i> Administration
+            </a>
+            <a class="item" ng-click="logout(connectedUser)">
+                <i class="red sign out icon"></i> Déconnexion
+            </a>
+        </div>
     </div>
 
     <div ui-view class="main container fx-bounce-left">
