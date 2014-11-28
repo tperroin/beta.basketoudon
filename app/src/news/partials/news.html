@@ -7,7 +7,9 @@
             <div class="news infos">Ajouté par : {{news.created_by}} - {{news.created_at | date: 'dd/MMM/yyyy'}}</div>
             <div class="news content">
                 <h3>{{news.title}}</h3>
-                {{news.content}}
+                <div class="resume">
+                    {{news.content}}
+                </div>
             </div>
             <div class="news next">
                 <i class="down arrow orange tiny icon"></i>

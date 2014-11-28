@@ -1,3 +1,8 @@
+tperroin_utilities:
+    resource: "@TperroinUtilitiesBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 tperroin_basket:
     resource: "@TperroinBasketBundle/Controller/"
     type:     annotation
@@ -23,7 +28,14 @@ news:
 users:
     type: rest
     resource: Tperroin\BasketBundle\Controller\AuthorizationController
-    prefix: api/fully/v1.0/users/
+    prefix: api/trully/v1.0/users/
+    options:
+        expose: true
+
+licencies:
+    type: rest
+    resource: Tperroin\BasketBundle\Controller\User\LicencieController
+    prefix: api/trully/v1.0/users/licencies
     options:
         expose: true
 

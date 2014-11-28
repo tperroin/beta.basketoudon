@@ -20,6 +20,9 @@ module.exports = function (grunt) {
                     'app/vendor/angular-ui-router/release/angular-ui-router.min.js',
                     'app/vendor/angular-http-auth/src/http-auth-interceptor.js',
                     'app/vendor/ngFx/dist/ngFx.min.js',
+                    'app/vendor/selectize/dist/js/standalone/selectize.min.js',
+                    'app/vendor/toaster/toaster.js',
+                    'app/src/app.js',
                     'app/src/**/*.js',
                     'app/src/js/**/*.js'
 
@@ -33,7 +36,9 @@ module.exports = function (grunt) {
                 src: [
                     'app/src/**/*.css',
                     'app/vendor/semantic-ui/build/packaged/css/semantic.min.css',
-                    'app/vendor/jquery-focuspoint/css/focuspoint.css'
+                    'app/vendor/jquery-focuspoint/css/focuspoint.css',
+                    'app/vendor/toaster/toaster.css',
+                    'app/vendor/selectize/dist/css/selectize.css'
                 ],
                 dest: 'app/web/css/main.min.css'
             }

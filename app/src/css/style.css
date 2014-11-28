@@ -76,6 +76,13 @@ i.icon.logo.top {
     background: url("../img/bg-black.png") #282828;
 }
 
+#topHeaderIcon {
+    cursor: pointer;
+    position: absolute;
+    top: 2em;
+    right: 0px;
+}
+
 /*
     NEWS STYLE
 */
@@ -106,6 +113,16 @@ i.icon.logo.top {
     float: right;
 }
 
+.resume {
+    display: inline-block;
+}
+
+/*Selectize*/
+
+.selectize-dropdown {
+    z-index: 10000!important;
+}
+
 .widget > .ui.segment {
     margin-bottom: 10px!important;
 }
@@ -123,6 +140,48 @@ i.icon.logo.top {
     margin-bottom: 1.5%;
     margin-top: 0;
     padding: 5px 0 0;
+}
+
+/*timeline*/
+#cd-timeline {
+    position: relative;
+    padding: 2em 0;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+#cd-timeline::before {
+    /* this is the vertical line */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px;
+    height: 100%;
+    width: 4px;
+    background: #d7e4ed;
+}
+
+.cssanimations .cd-timeline-img.is-hidden {
+    visibility: hidden;
+}
+.cssanimations .cd-timeline-img.bounce-in {
+    visibility: visible;
+    animation: cd-bounce-1 0.6s;
+}
+
+@keyframes cd-bounce-1 {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 @media (min-width: 0) {

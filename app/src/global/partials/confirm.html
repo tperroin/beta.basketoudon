@@ -1,0 +1,24 @@
+<div>
+    <div class="collapsing">
+        <div class="ui segment">
+            <div class="ui positive message" ng-if="!message">
+                <i class="close icon"></i>
+
+                <div class="header">
+                    Bravo !
+                </div>
+                <p>Ton compte est maintenant activé ! Tu peux te connecter sur la page d'accueil.</p>
+            </div>
+            <div class="ui negative message" ng-if="message">
+                <i class="close icon"></i>
+
+                <div class="header">
+                    Erreur
+                </div>
+                <p>{{message}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

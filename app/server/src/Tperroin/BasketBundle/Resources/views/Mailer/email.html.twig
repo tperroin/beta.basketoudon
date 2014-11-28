@@ -1,0 +1,18 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% block subject %}
+    {% autoescape false %}
+    Bienvenue {{ user.username }} !
+    {% endautoescape %}
+{% endblock %}
+{% block body_text %}
+    {% autoescape false %}
+    Bonjour {{ user.username }} !
+
+    Pour valider votre compte utilisateur, merci de vous rendre sur http://localhost/beta.basketoudon/app/#/register/confirm/{{ user.confirmationToken }}
+
+    Cordialement,
+
+    Asso Basket Oudon.
+    {% endautoescape %}
+{% endblock %}
+{% block body_html %}{% endblock %}

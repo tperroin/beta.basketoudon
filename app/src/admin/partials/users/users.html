@@ -1,0 +1,32 @@
+<div class="ui red segment">
+    <h2 class="ui header">
+        Utilisateurs
+    </h2>
+    <div class="ui section divider"></div>
+    <div class="ui icon input">
+        <input type="text" placeholder="Rechercher..." ng-model="search">
+        <i class="search icon"></i>
+    </div>
+    <table class="ui table segment">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Nom d'utilisateur</th>
+            <th>Email</th>
+            <th>Dernière connexion</th>
+            <th>Activé</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in users | filter:search" class="fx-zoom-up fx-easing-bounce">
+            <td>{{user.firstname}}</td>
+            <td>{{user.lastname}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.last_login | date: 'd MMM y h:mm:ss'}}</td>
+            <td ng-class="{positive: user.enabled, negative: !user.enabled}">{{user.enabled}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

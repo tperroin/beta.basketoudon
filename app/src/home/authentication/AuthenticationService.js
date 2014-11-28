@@ -6,22 +6,23 @@ angular.module('app').
     factory('AuthenticationService', function ($rootScope, $http, authService, $httpBackend, ApiService, Restangular, $window, UserService) {
         return {
             login: function (credentials) {
+                var origin = window.location.origin;
                 $http
-                    .post("http://beta.basketoudon.local/server/web/app_dev.php/api/login_check", credentials, {ignoreAuthModule: true})
+                    .post(origin + "/beta.basketoudon/app/server/web/app_dev.php/api/login_check", credentials, {ignoreAuthModule: true})
                     .success(function (data, status, headers, config) {
                         $window.sessionStorage.token = data.token;
                         $http.defaults.headers.common.Authorization = 'Bearer ' + data.token;
 
-                        Restangular.all(ApiService.getRoute('get_user'), {username: credentials.username}).getList()
+                        Restangular.all(ApiService.getRoute('get_user')).get(credentials.username)
                             .then(function (result) {
                                 var user = Restangular.stripRestangular(result);
-                                $rootScope.connectedUser = UserService.User(user[0]);
+                                $rootScope.connectedUser = UserService.User(user);
                                 $rootScope.connectedUser.connected = true
 
                                 var userToStore = {
-                                    username: user[0].username,
-                                    email: user[0].email,
-                                    roles: user[0].roles
+                                    username: user.username,
+                                    email: user.email,
+                                    roles: user.roles
                                 }
 
                                 $window.sessionStorage.user = JSON.stringify(userToStore);
@@ -29,6 +30,7 @@ angular.module('app').
                             });
                     })
                     .error(function (data, status, headers, config) {
+                        console.log(data);
                         $rootScope.$broadcast('event:auth-login-failed', status);
                     });
             },

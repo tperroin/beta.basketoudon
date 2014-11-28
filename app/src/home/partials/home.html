@@ -1,5 +1,5 @@
 <div class="ui two stackable column grid">
-    <div class="collapsing no-border news ten wide column">
+    <div class="collapsing no-border ten wide column">
 
         <div class="ui segment" ng-repeat="news in newsList">
             <div class="news image">
@@ -8,7 +8,9 @@
             <div class="news infos">Ajouté par : {{news.created_by}} - {{news.created_at | date: 'dd/MMM/yyyy'}}</div>
             <div class="news content">
                 <h3>{{news.title}}</h3>
-                {{news.content | limitTo: 225}}...
+                <div class="resume">
+                    {{news.content}}...
+                </div>
             </div>
             <div class="news next">
                 <i class="down arrow orange tiny icon"></i>
@@ -20,6 +22,12 @@
             <form ng-submit="login(credentials)">
                 <div class="ui form segment">
                     <div class="field" ng-class="{error: errorMessage}">
+                        <div class="ui negative message" ng-show="errorMessage">
+                            <div class="header">
+                                Erreur
+                            </div>
+                            <p>{{errorMessage}}</p>
+                        </div>
                         <div class="ui left labeled icon input">
                             <input type="text" placeholder="Nom d'utilisateur" name="username"
                                    ng-model="credentials.username">
@@ -44,6 +52,7 @@
                         <div class="header">We noticed some issues</div>
                     </div>
                     <input type="submit" class="ui blue submit small button" value="Se connecter"/>
+                    <button class="ui blue small button" ui-sref="sign_up">S'inscrire</button>
                 </div>
             </form>
         </div>

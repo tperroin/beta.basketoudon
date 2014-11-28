@@ -20,8 +20,8 @@ angular
             $scope.newsList = Restangular.stripRestangular(result);
         });
 
-        $scope.$on('event:auth-login-failed', function () {
-            $scope.errorMessage = 'Bad credentials';
+        $scope.$on('event:auth-login-failed', function (status) {
+            $scope.errorMessage = 'Compte non existant ou non activé (vérifie tes emails)';
         });
 
         $scope.$on('event:auth-login-complete', function () {

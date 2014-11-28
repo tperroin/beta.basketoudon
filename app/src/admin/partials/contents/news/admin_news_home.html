@@ -1,9 +1,14 @@
 <div class="ui blue segment">
+    <i id="topHeaderIcon" class="circular inverted green large icon add" title="Ajouter un article"></i>
     <h2 class="ui header">
-        Gestion des articles
+        Articles
     </h2>
 
     <div class="ui section divider"></div>
+    <div class="ui icon input">
+        <input type="text" placeholder="Rechercher..." ng-model="search">
+        <i class="search icon"></i>
+    </div>
     <table class="ui table segment">
         <thead>
         <tr>
@@ -12,15 +17,20 @@
             <th>Ajouté le</th>
             <th>Créé par</th>
             <th>Publié</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="news in newsList">
+        <tr ng-repeat="news in newsList | filter:search" class="fx-zoom-up fx-easing-bounce">
             <td>{{news.title}}</td>
             <td>{{news.content | limitTo: 150}}</td>
             <td>{{news.created_at | date: 'dd/MMM/yyyy'}}</td>
             <td>{{news.created_by}}</td>
-            <td>{{news.is_active}}</td>
+            <td ng-class="{positive: news.is_active, negative: !news.is_active}">{{news.is_active}}</td>
+            <td>
+                <i class="edit blue icon link" title="Editer l'article"></i>
+                <i class="delete red icon link" title="Supprimer l'article"></i>
+            </td>
         </tr>
 
         </tbody>
