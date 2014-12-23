@@ -70,9 +70,6 @@ class NewsRestController extends Controller
     public function postNewsAction(Request $request)
     {
 
-        $em = $this->getDoctrine()->getManager();
-
-        $news = new News();
 
     } // "news"    [POST] /news
 
@@ -118,4 +115,4 @@ class NewsRestController extends Controller
     {
     } // "delete_new"    [PATCH] /news/{slug}
 
-} 
+}

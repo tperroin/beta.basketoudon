@@ -1,16 +1,16 @@
 <?php
 
-namespace Tperroin\BasketBundle\Entity;
+namespace Tperroin\BasketBundle\Entity\Events;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * News
+ * Event
  *
- * @ORM\Table(name="news__news")
- * @ORM\Entity(repositoryClass="Tperroin\BasketBundle\Entity\NewsRepository")
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Tperroin\BasketBundle\Entity\Events\EventRepository")
  */
-class News
+class Event
 {
     /**
      * @var integer
@@ -38,23 +38,9 @@ class News
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created_at", type="datetime")
+     * @ORM\Column(name="date_at", type="datetime")
      */
-    private $createdAt;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="created_by", type="string", length=255)
-     */
-    private $createdBy;
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="is_active", type="boolean")
-     */
-    private $isActive;
+    private $dateAt;
 
     /**
      * @var string
@@ -62,6 +48,7 @@ class News
      * @ORM\Column(name="image", type="string", length=255)
      */
     private $image;
+
 
     /**
      * Get id
@@ -77,7 +64,7 @@ class News
      * Set title
      *
      * @param string $title
-     * @return News
+     * @return Event
      */
     public function setTitle($title)
     {
@@ -100,7 +87,7 @@ class News
      * Set content
      *
      * @param string $content
-     * @return News
+     * @return Event
      */
     public function setContent($content)
     {
@@ -120,79 +107,33 @@ class News
     }
 
     /**
-     * Set createdAt
+     * Set dateAt
      *
-     * @param \DateTime $createdAt
-     * @return News
+     * @param \DateTime $dateAt
+     * @return Event
      */
-    public function setCreatedAt($createdAt)
+    public function setDateAt($dateAt)
     {
-        $this->createdAt = $createdAt;
+        $this->dateAt = $dateAt;
 
         return $this;
     }
 
     /**
-     * Get createdAt
+     * Get dateAt
      *
      * @return \DateTime 
      */
-    public function getCreatedAt()
+    public function getDateAt()
     {
-        return $this->createdAt;
-    }
-
-    /**
-     * Set createdBy
-     *
-     * @param string $createdBy
-     * @return News
-     */
-    public function setCreatedBy($createdBy)
-    {
-        $this->createdBy = $createdBy;
-
-        return $this;
-    }
-
-    /**
-     * Get createdBy
-     *
-     * @return string 
-     */
-    public function getCreatedBy()
-    {
-        return $this->createdBy;
-    }
-
-    /**
-     * Set isActive
-     *
-     * @param boolean $isActive
-     * @return News
-     */
-    public function setActive($isActive)
-    {
-        $this->isActive = $isActive;
-
-        return $this;
-    }
-
-    /**
-     * Get isActive
-     *
-     * @return boolean 
-     */
-    public function getActive()
-    {
-        return $this->isActive;
+        return $this->dateAt;
     }
 
     /**
      * Set image
      *
      * @param string $image
-     * @return News
+     * @return Event
      */
     public function setImage($image)
     {

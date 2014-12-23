@@ -5,7 +5,8 @@ angular
         'ui.router',
         'ngFx',
         'http-auth-interceptor',
-        'toaster'
+        'toaster',
+        'angularify.semantic.modal'
     ]);
 
 angular
@@ -61,7 +62,8 @@ angular
             })
             .state('events', {
                 url: "/evenements",
-                templateUrl: "src/timeline/partials/timeline.html"
+                templateUrl: "src/timeline/partials/timeline.html",
+                controller: "event.controller"
             })
             .state('admin', {
                 url: "/admin",
@@ -70,12 +72,22 @@ angular
             .state('admin_news_home', {
                 url: "/admin/news",
                 templateUrl: "src/admin/partials/contents/news/admin_news_home.html",
-                controller: 'newsAdminController'
+                controller: 'admin.news.controller'
+            })
+            .state('admin_news_add', {
+                url: "/admin/news/add",
+                templateUrl: "src/admin/partials/contents/news/admin_news_add.html",
+                controller: 'admin.news.controller'
             })
             .state('admin_users', {
                 url: "/admin/users",
                 templateUrl: "src/admin/partials/users/users.html",
                 controller: 'admin.users.controller'
+            })
+            .state('admin_events', {
+                url: "/admin/events",
+                templateUrl: "src/admin/partials/contents/events/admin_events_home.html",
+                controller: 'admin.events.controller'
             })
             .state('401_error', {
                 url: "/401",

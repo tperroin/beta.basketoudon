@@ -1,0 +1,35 @@
+<div class="ui blue segment">
+    <i id="topHeaderIcon" class="circular inverted green large icon add" title="Ajouter un évènement"></i>
+    <h2 class="ui header">
+        Evènements
+    </h2>
+
+    <div class="ui section divider"></div>
+    <div class="ui icon input">
+        <input type="text" placeholder="Rechercher..." ng-model="search">
+        <i class="search icon"></i>
+    </div>
+    <table class="ui table segment">
+        <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Contenu résumé</th>
+            <th>Le</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="event in event | filter:search" class="fx-zoom-up fx-easing-bounce">
+            <td>{{event.title}}</td>
+            <td>{{event.content | limitTo: 150}}</td>
+            <td>{{event.date_at | date: 'dd/MMM/yyyy'}}</td>
+            <td>
+                <i class="edit blue icon link" title="Editer l'évènement"></i>
+                <i class="delete red icon link" title="Supprimer l'évènement"></i>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>

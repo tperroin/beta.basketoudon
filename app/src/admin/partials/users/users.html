@@ -16,6 +16,7 @@
             <th>Email</th>
             <th>Dernière connexion</th>
             <th>Activé</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -26,6 +27,37 @@
             <td>{{user.email}}</td>
             <td>{{user.last_login | date: 'd MMM y h:mm:ss'}}</td>
             <td ng-class="{positive: user.enabled, negative: !user.enabled}">{{user.enabled}}</td>
+            <td>
+                <div class="circular blue inverted ui icon button" ng-click="grantUser(user)">
+                  <i class="icon level up"></i>
+                </div>
+                <modal ng-model="show_modal">
+                    <i class="close icon" ng-click="close_modal()"></i>
+                    <div class="header">
+                        Modifier les rôles de : {{user.username}}
+                    </div>
+                    <div class="content">
+                        <div class="left">
+                            <i class="home icon"></i>
+                        </div>
+                        <div class="right">
+                            <p>Are you sure you want to change your homepage to <b>Poodle.com</b>?</p>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <div class="two fluid ui buttons">
+                            <div class="ui negative labeled icon button">
+                                <i class="remove icon"></i>
+                                No
+                            </div>
+                            <div class="ui positive right labeled icon button">
+                                Yes
+                                <i class="checkmark icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </modal>
+            </td>
         </tr>
         </tbody>
     </table>

@@ -32,6 +32,20 @@ users:
     options:
         expose: true
 
+eventget:
+    type: rest
+    resource: Tperroin\BasketBundle\Controller\Events\EventGet
+    prefix: api/trully/v1.0/events/
+    options:
+        expose: true
+
+event:
+    type: rest
+    resource: Tperroin\BasketBundle\Controller\Events\Event
+    prefix: api/fully/v1.0/events/
+    options:
+        expose: true
+
 licencies:
     type: rest
     resource: Tperroin\BasketBundle\Controller\User\LicencieController

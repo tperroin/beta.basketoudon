@@ -13,8 +13,7 @@ module.exports = function (grunt) {
                     'app/server/web/js/fos_js_routes.js',
                     'app/vendor/angular/angular.min.js',
                     'app/vendor/jquery/dist/jquery.min.js',
-                    'app/vendor/semantic-ui/build/packaged/javascript/semantic.min.js',
-                    'app/vendor/imgLiquid/js/imgLiquid-min.js',
+                    'app/vendor/semantic-ui/dist/semantic.min.js',
                     'app/vendor/lodash/dist/lodash.min.js',
                     'app/vendor/restangular/dist/restangular.min.js',
                     'app/vendor/angular-ui-router/release/angular-ui-router.min.js',
@@ -35,7 +34,7 @@ module.exports = function (grunt) {
                 },
                 src: [
                     'app/src/**/*.css',
-                    'app/vendor/semantic-ui/build/packaged/css/semantic.min.css',
+                    'app/vendor/semantic-ui/dist/semantic.min.css',
                     'app/vendor/jquery-focuspoint/css/focuspoint.css',
                     'app/vendor/toaster/toaster.css',
                     'app/vendor/selectize/dist/css/selectize.css'

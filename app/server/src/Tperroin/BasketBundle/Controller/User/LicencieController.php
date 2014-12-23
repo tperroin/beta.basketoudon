@@ -49,10 +49,6 @@ class LicencieController extends Controller
     public function postLicencieAction(Request $request)
     {
 
-        $em = $this->getDoctrine()->getManager();
-
-        $licencie = new Licencie();
-
     } // "licencie"    [POST] /licencie
 
     /**
@@ -106,4 +102,4 @@ class LicencieController extends Controller
     {
     } // "delete_licencie"    [PATCH] /licencie/{slug}
 
-} 
+}

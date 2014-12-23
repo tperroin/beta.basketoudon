@@ -11,8 +11,6 @@ namespace Tperroin\BasketBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\View\View;
-use FOS\UserBundle\Mailer\Mailer;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpFoundation\Request;
 use Tperroin\BasketBundle\Entity\User\User;
@@ -120,4 +118,4 @@ class AuthorizationController extends FOSRestController
         return $this->get('fos_rest.view_handler')->handle($view);
     }
 
-} 
+}

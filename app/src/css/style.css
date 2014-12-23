@@ -45,6 +45,7 @@ i.icon.logo.top {
 
 .item.logo {
     padding: 0 !important;
+    text-align: center;
 }
 
 .ui.grid > .collapsing.column > .segment {
@@ -81,6 +82,10 @@ i.icon.logo.top {
     position: absolute;
     top: 2em;
     right: 0px;
+}
+
+.index{
+    height: 960px;
 }
 
 /*
