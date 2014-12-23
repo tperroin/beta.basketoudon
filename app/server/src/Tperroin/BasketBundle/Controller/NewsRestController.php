@@ -12,7 +12,6 @@ use FOS\RestBundle\View\View;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Tperroin\BasketBundle\Entity\News;
 
 /**
  * Class NewsRestController

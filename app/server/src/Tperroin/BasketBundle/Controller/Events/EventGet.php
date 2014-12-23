@@ -11,8 +11,6 @@ namespace Tperroin\BasketBundle\Controller\Events;
 use FOS\RestBundle\View\View;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
-use Tperroin\BasketBundle\Entity\News;
 
 class EventGet extends Controller {
 
@@ -41,4 +39,4 @@ class EventGet extends Controller {
     {
     } // "get_event"      [GET] /event/{slug}
 
-} 
+}
